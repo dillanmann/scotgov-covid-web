@@ -14,6 +14,8 @@ namespace ScotgovCovid.Web
 {
     public class Startup
     {
+        private readonly string CorsPolicyName = "_ScotgovCovidWebCorsPolicy";
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -30,6 +32,17 @@ namespace ScotgovCovid.Web
                .AddQueryType<Query>()
                .Create(),
                new QueryExecutionOptions { ForceSerialExecution = true });
+
+            if (Configuration.GetValue<bool>("EnableCors"))
+            {
+                services.AddCors(o => o.AddPolicy(CorsPolicyName, builder =>
+                {
+                    builder.AllowAnyOrigin()
+                           .AllowAnyMethod()
+                           .AllowAnyHeader()
+                           .AllowCredentials();
+                }));
+            }
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
