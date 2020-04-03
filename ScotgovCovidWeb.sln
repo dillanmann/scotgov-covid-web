@@ -3,11 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29709.97
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScotgovCovidGraphql", "ScotgovCovidGraphql\ScotgovCovidGraphql.csproj", "{FBB26E17-F12D-4179-AAD1-ACCBF7EFE1E4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScotgovCovid.Web", "ScotgovCovidGraphql\ScotgovCovid.Web.csproj", "{FBB26E17-F12D-4179-AAD1-ACCBF7EFE1E4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScotgovCovid.Shared", "ScotgovCovid.Shared\ScotgovCovid.Shared.csproj", "{0942A80D-A250-4005-BAAD-03398B71B23C}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScotgovCovidWeb.DataAccess", "ScotgovCovidWeb.DataAccess\ScotgovCovidWeb.DataAccess.csproj", "{7E7A0901-C3B4-4A52-B570-D02A25A351C2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScotgovCovidWeb.DataAccess", "ScotgovCovidWeb.DataAccess\ScotgovCovidWeb.DataAccess.csproj", "{7E7A0901-C3B4-4A52-B570-D02A25A351C2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,10 +17,6 @@ Global
 		{FBB26E17-F12D-4179-AAD1-ACCBF7EFE1E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FBB26E17-F12D-4179-AAD1-ACCBF7EFE1E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FBB26E17-F12D-4179-AAD1-ACCBF7EFE1E4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0942A80D-A250-4005-BAAD-03398B71B23C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0942A80D-A250-4005-BAAD-03398B71B23C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0942A80D-A250-4005-BAAD-03398B71B23C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0942A80D-A250-4005-BAAD-03398B71B23C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7E7A0901-C3B4-4A52-B570-D02A25A351C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7E7A0901-C3B4-4A52-B570-D02A25A351C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7E7A0901-C3B4-4A52-B570-D02A25A351C2}.Release|Any CPU.ActiveCfg = Release|Any CPU

@@ -1,23 +1,22 @@
-﻿using ScotgovCovid.Shared;
+﻿using HotChocolate;
+using HotChocolate.Types;
+using HotChocolate.Types.Relay;
 using ScotgovCovidWeb.DataAccess;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace ScotgovCovidGraphql.Types
+namespace ScotgovCovid.Web.Types
 {
-   public class Query
-   {
-      private readonly ScotgovCovidStatsContext context;
-      public Query(ScotgovCovidStatsContext context)
-      {
-         this.context = context ?? throw new ArgumentNullException(nameof(context));
-      }
-
-      public IEnumerable<Dataset> Datasets()
-      {
-         return this.context.Datasets;
-      }
-   }
+    /// <summary>
+    /// GraphQL query class.
+    /// </summary>
+    public class Query
+    {
+        /// <summary>
+        /// Get the datasets.
+        /// </summary>
+        /// <returns>List of data sets.</returns>
+        [UsePaging]
+        [UseSorting]
+        public IEnumerable<Datasets> Datasets([Service]ScotgovCovidStatsContext context) => context.Datasets;
+    }
 }
