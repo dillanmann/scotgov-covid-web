@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>d18a011a-2064-4baf-99f5-7f3832c1af93</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="HotChocolate" Version="10.4.0" />
+    <PackageReference Include="HotChocolate.AspNetCore" Version="10.4.0" />
+    <PackageReference Include="HotChocolate.AspNetCore.Playground" Version="10.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ScotgovCovidWeb.DataAccess\ScotgovCovidWeb.DataAccess.csproj" />
+  </ItemGroup>
+
+</Project>
