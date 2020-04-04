@@ -16,10 +16,6 @@ namespace ScotgovCovidWeb.DataAccess
         public virtual DbSet<Datasets> Datasets { get; set; }
         public virtual DbSet<PgStatStatements> PgStatStatements { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-        }
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.HasPostgresExtension("btree_gin")
@@ -50,46 +46,46 @@ namespace ScotgovCovidWeb.DataAccess
                 entity.ToTable("datasets");
 
                 entity.HasIndex(e => e.Date)
-                    .HasName("date_unique")
+                    .HasName("datasets_date_key")
                     .IsUnique();
 
                 entity.Property(e => e.Id)
                     .HasColumnName("id")
                     .ValueGeneratedNever();
 
-                entity.Property(e => e.AyrshireandarranDeaths).HasColumnName("ayrshireandarran_deaths");
+                entity.Property(e => e.AyrshireandarranCases).HasColumnName("ayrshireandarran_cases");
 
-                entity.Property(e => e.BordersDeaths).HasColumnName("borders_deaths");
+                entity.Property(e => e.BordersCases).HasColumnName("borders_cases");
 
                 entity.Property(e => e.Date)
                     .HasColumnName("date")
                     .HasColumnType("date");
 
-                entity.Property(e => e.DumfriesandgallowayDeaths).HasColumnName("dumfriesandgalloway_deaths");
+                entity.Property(e => e.DumfriesandgallowayCases).HasColumnName("dumfriesandgalloway_cases");
 
-                entity.Property(e => e.FifeDeaths).HasColumnName("fife_deaths");
+                entity.Property(e => e.FifeCases).HasColumnName("fife_cases");
 
-                entity.Property(e => e.ForthvalleyDeaths).HasColumnName("forthvalley_deaths");
+                entity.Property(e => e.ForthvalleyCases).HasColumnName("forthvalley_cases");
 
-                entity.Property(e => e.GrampianDeaths).HasColumnName("grampian_deaths");
+                entity.Property(e => e.GrampianCases).HasColumnName("grampian_cases");
 
-                entity.Property(e => e.GreaterglasgowandclydeDeaths).HasColumnName("greaterglasgowandclyde_deaths");
+                entity.Property(e => e.GreaterglasgowandclydeCases).HasColumnName("greaterglasgowandclyde_cases");
 
-                entity.Property(e => e.HighlandDeaths).HasColumnName("highland_deaths");
+                entity.Property(e => e.HighlandCases).HasColumnName("highland_cases");
 
-                entity.Property(e => e.LanarkshireDeaths).HasColumnName("lanarkshire_deaths");
+                entity.Property(e => e.LanarkshireCases).HasColumnName("lanarkshire_cases");
 
-                entity.Property(e => e.LothianDeaths).HasColumnName("lothian_deaths");
+                entity.Property(e => e.LothianCases).HasColumnName("lothian_cases");
 
                 entity.Property(e => e.NegativeTests).HasColumnName("negative_tests");
 
-                entity.Property(e => e.OrkneyDeaths).HasColumnName("orkney_deaths");
+                entity.Property(e => e.OrkneyCases).HasColumnName("orkney_cases");
 
                 entity.Property(e => e.PositiveTests).HasColumnName("positive_tests");
 
-                entity.Property(e => e.ShetlandDeaths).HasColumnName("shetland_deaths");
+                entity.Property(e => e.ShetlandCases).HasColumnName("shetland_cases");
 
-                entity.Property(e => e.TaysideDeaths).HasColumnName("tayside_deaths");
+                entity.Property(e => e.TaysideCases).HasColumnName("tayside_cases");
 
                 entity.Property(e => e.TotalDeaths).HasColumnName("total_deaths");
 

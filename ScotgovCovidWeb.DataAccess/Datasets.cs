@@ -11,18 +11,18 @@ namespace ScotgovCovidWeb.DataAccess
         public int PositiveTests { get; set; }
         public int NegativeTests { get; set; }
         public int TotalDeaths { get; set; }
-        public int AyrshireandarranDeaths { get; set; }
-        public int BordersDeaths { get; set; }
-        public int DumfriesandgallowayDeaths { get; set; }
-        public int FifeDeaths { get; set; }
-        public int ForthvalleyDeaths { get; set; }
-        public int GrampianDeaths { get; set; }
-        public int GreaterglasgowandclydeDeaths { get; set; }
-        public int HighlandDeaths { get; set; }
-        public int LanarkshireDeaths { get; set; }
-        public int LothianDeaths { get; set; }
-        public int OrkneyDeaths { get; set; }
-        public int ShetlandDeaths { get; set; }
-        public int TaysideDeaths { get; set; }
+        public int AyrshireandarranCases { get; set; }
+        public int BordersCases { get; set; }
+        public int DumfriesandgallowayCases { get; set; }
+        public int FifeCases { get; set; }
+        public int ForthvalleyCases { get; set; }
+        public int GrampianCases { get; set; }
+        public int GreaterglasgowandclydeCases { get; set; }
+        public int HighlandCases { get; set; }
+        public int LanarkshireCases { get; set; }
+        public int LothianCases { get; set; }
+        public int OrkneyCases { get; set; }
+        public int ShetlandCases { get; set; }
+        public int TaysideCases { get; set; }
     }
 }
