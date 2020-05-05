@@ -1,9 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace ScotgovCovidWeb.DataAccess
 {
-    public partial class Datasets
+    public partial class ScrapedData
     {
         public Guid Id { get; set; }
         public DateTime Date { get; set; }

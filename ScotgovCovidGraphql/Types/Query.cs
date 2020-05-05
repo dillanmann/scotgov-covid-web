@@ -17,6 +17,16 @@ namespace ScotgovCovid.Web.Types
         /// <returns>List of data sets.</returns>
         [UsePaging]
         [UseSorting]
-        public IEnumerable<Datasets> Datasets([Service]ScotgovCovidStatsContext context) => context.Datasets;
+        public IEnumerable<ScrapedData> ScrapedDatasets([Service]ScotgovCovidStatsContext context)
+            => context.Datasets;
+
+        /// <summary>
+        /// Get the datasets.
+        /// </summary>
+        /// <returns>List of data sets.</returns>
+        [UsePaging]
+        [UseSorting]
+        public IEnumerable<CalculatedData> CalculatedDatasets([Service]ScotgovCovidStatsContext context)
+            => context.CalculatedData;
     }
 }

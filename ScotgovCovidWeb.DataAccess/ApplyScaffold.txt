@@ -1,0 +1,1 @@
+﻿dotnet ef dbcontext scaffold "<conn string>" Npgsql.EntityFrameworkCore.PostgreSQL --startup-project ..\ScotgovCovidGraphql\ --force

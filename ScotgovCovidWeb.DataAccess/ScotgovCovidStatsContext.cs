@@ -13,7 +13,8 @@ namespace ScotgovCovidWeb.DataAccess
         {
         }
 
-        public virtual DbSet<Datasets> Datasets { get; set; }
+        public virtual DbSet<CalculatedData> CalculatedData { get; set; }
+        public virtual DbSet<ScrapedData> Datasets { get; set; }
         public virtual DbSet<PgStatStatements> PgStatStatements { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -41,7 +42,21 @@ namespace ScotgovCovidWeb.DataAccess
                 .HasPostgresExtension("uuid-ossp")
                 .HasPostgresExtension("xml2");
 
-            modelBuilder.Entity<Datasets>(entity =>
+            modelBuilder.Entity<CalculatedData>(entity =>
+            {
+                entity.HasKey(e => e.Date)
+                    .HasName("calculated_data_pkey");
+
+                entity.ToTable("calculated_data");
+
+                entity.Property(e => e.Date)
+                    .HasColumnName("date")
+                    .HasColumnType("date");
+
+                entity.Property(e => e.DailyDeaths).HasColumnName("daily_deaths");
+            });
+
+            modelBuilder.Entity<ScrapedData>(entity =>
             {
                 entity.ToTable("datasets");
 
